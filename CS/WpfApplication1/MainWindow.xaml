@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxspch="http://schemas.devexpress.com/winfx/2008/xaml/spellchecker" 
+        Title="Spell Checker" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <dxe:TextEdit Name="textEdit1" 
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      Grid.Column="1"
+                      AcceptsReturn="True"
+                      TextWrapping="Wrap" 
+                      VerticalContentAlignment="Top"
+                      Text="To jest prykladowy teksst">
+            <!--region #xaml_settings-->
+            <dxspch:SpellingSettings.SpellChecker>
+                <Binding Path="SpellChecker"/>
+            </dxspch:SpellingSettings.SpellChecker>
+            <dxspch:SpellingSettings.CheckAsYouType>True</dxspch:SpellingSettings.CheckAsYouType>
+            <dxspch:SpellingSettings.ShowSpellCheckMenu>True</dxspch:SpellingSettings.ShowSpellCheckMenu>
+            <dxspch:SpellingSettings.UnderlineColor>Red</dxspch:SpellingSettings.UnderlineColor>
+            <dxspch:SpellingSettings.UnderlineStyle>WavyLine</dxspch:SpellingSettings.UnderlineStyle>
+            <!--endregion #xaml_settings-->
+            <!--region #xaml_dictionary-->
+            <dxspch:SpellingSettings.DictionarySourceCollection>
+                <dxspch:DictionarySourceCollection>
+                    <dxspch:SpellCheckerOpenOfficeDictionarySource Culture="pl-PL" 
+                                                               DictionaryUri="pack://siteoforigin:,,,/Dictionaries/pl_PL.dic" 
+                                                               GrammarUri="pack://siteoforigin:,,,/Dictionaries/pl_PL.aff"/>
+                </dxspch:DictionarySourceCollection>
+            </dxspch:SpellingSettings.DictionarySourceCollection>
+            <!--endregion #xaml_dictionary-->
+        </dxe:TextEdit>
+        <Button Name="button1" 
+                Margin="12,12,12,0" Height="23" Width="85"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Grid.Column="0" 
+                Content="Check Spelling" Click="button1_Click"/>
+    </Grid>
+</Window>
