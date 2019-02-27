@@ -10,6 +10,7 @@ Namespace WpfApplication1
         Private checker As SpellChecker
 
         Public Sub New()
+            DataContext = Me
             checker = New SpellChecker()
             InitializeComponent()
             checker.Culture = New CultureInfo("pl-PL")
