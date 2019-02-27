@@ -11,6 +11,7 @@ namespace WpfApplication1
 
         public MainWindow()
         {
+            DataContext = this;
             checker = new SpellChecker();
             InitializeComponent();
             checker.Culture = new CultureInfo("pl-PL");
