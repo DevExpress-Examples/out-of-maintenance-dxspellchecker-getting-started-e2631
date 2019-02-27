@@ -14,6 +14,7 @@ Namespace WpfApplication1
             checker = New SpellChecker()
             InitializeComponent()
             checker.Culture = New CultureInfo("pl-PL")
+            checker.SpellCheckMode = DevExpress.XtraSpellChecker.SpellCheckMode.AsYouType
             SpellChecker = checker
         End Sub
 
