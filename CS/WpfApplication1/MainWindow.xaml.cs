@@ -15,6 +15,7 @@ namespace WpfApplication1
             checker = new SpellChecker();
             InitializeComponent();
             checker.Culture = new CultureInfo("pl-PL");
+            checker.SpellCheckMode = DevExpress.XtraSpellChecker.SpellCheckMode.AsYouType; 
             SpellChecker = checker;
         }
 
